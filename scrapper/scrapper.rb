@@ -9,7 +9,7 @@ def scraper
     game_listing = parsed_page.css('div.promo-game-item') # 219 name of game 
     game_listing.each  do |game_listing|
         game = {
-            title: game_listing.css('div.game-title').text ,
+            title: game_listing.css('div.game-title')[0].text ,
             link:  game_listing.css('a')[1].text,
             url:   game_listing.css('a')[0].attributes["href"].value
         }
